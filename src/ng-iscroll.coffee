@@ -14,7 +14,7 @@ angular.module( 'ngIscroll', [])
       collect = attr.ngIscroll
       options = useTransition: true
       if attr.iscrollForm?
-        options.onBeforeScrollStart = ->
+        options.onBeforeScrollStart = (e)->
           target = e.target
           target = target.parentNode while (target.nodeType != 1)
           e.preventDefault() if (target.tagName != 'SELECT' && target.tagName != 'INPUT' && target.tagName != 'TEXTAREA')
